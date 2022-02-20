@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- [Code Source]()
-- [Live Demo]()
+- [Code Source](https://github.com/zougari47/time-tracking-dashbord)
+- [Live Demo](https://time-tracking-dashbord.netlify.app/)
 
 ## My process
 
