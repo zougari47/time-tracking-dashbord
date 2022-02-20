@@ -1,0 +1,100 @@
+@use '../SASS/' as *;
+
+.small-cards {
+  background-position: 95% -4%;
+  background-size: 3.3rem;
+  background-color: red;
+  background-image: url(/img/icon-exercise.svg);
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  min-height: 150px;
+  position: relative;
+  border-radius: 1.2rem;
+  margin: 1rem auto;
+  @include tablet() {
+    margin: 0 auto;
+  }
+
+  &:hover {
+    box-shadow: none !important;
+  }
+
+  .infos-container {
+    width: 100%;
+    height: 80%;
+    background: $Dark-blue;
+    position: absolute;
+    bottom: 0;
+    color: $White;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background: $Desaturated-blue;
+    }
+
+    .info-container {
+      width: 85%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          @include font(0.84rem, 500);
+          color: $White;
+        }
+
+        svg {
+          fill: #bbc0ff;
+          cursor: pointer;
+
+          &:hover {
+            fill: $White !important;
+          }
+        }
+      }
+
+      .statistic {
+        @extend .title;
+
+        .hours {
+          @include font(1.6rem, 300);
+        }
+
+        .last-week {
+          color: $Pale-Blue;
+          @include font(0.65rem, 300);
+          @include tablet() {
+            max-width: 50%;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+$backgrounds-img: '2' '/img/icon-work.svg' $Light-red-work,
+  '3' '/img/icon-play.svg' $Soft-blue,
+  '4' '/img/icon-study.svg' $Light-red-study,
+  '5' '/img/icon-exercise.svg' $Lime-green, '6' '/img/icon-social.svg' $Violet,
+  '7' '/img/icon-self-care.svg ' $Soft-orange;
+
+@each $index, $path, $color in $backgrounds-img {
+  .small-cards:nth-child(#{$index}) {
+    background-color: #{$color};
+    background-image: url(#{$path});
+    // box-shadow: rgba($color, 0.2) 0px 3px 8px;
+  }
+}

@@ -1,0 +1,22 @@
+// Font
+@mixin font($size, $weight) {
+  font-family: 'Rubik', sans-serif;
+  font-weight: #{$weight};
+  font-size: #{$size};
+}
+
+// Flex
+
+@mixin Flex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+// Screen for tablet and higher
+@mixin tablet() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}

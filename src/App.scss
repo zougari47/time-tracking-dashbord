@@ -1,0 +1,46 @@
+@use './SASS/' as *;
+
+// Reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: inherit;
+  @include font($font-size, 400);
+  background-color: $Very-dark-blue;
+
+  @include tablet() {
+    font-size: $font-size * 1.17;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#app {
+  width: 90vw;
+  margin: 5vh 0;
+  display: grid;
+
+  @include tablet() {
+    margin: 0;
+    grid-template-columns: repeat(4, 1fr);
+    height: 80vh;
+    grid-gap: 0.7rem;
+    min-width: 768px;
+    width: 95vw;
+    height: 90vh;
+    max-width: 1250px;
+    max-height: 654px;
+  }
+}
