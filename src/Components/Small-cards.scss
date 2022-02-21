@@ -15,6 +15,7 @@
   margin: 1rem auto;
   @include tablet() {
     margin: 0 auto;
+    background-size: 4rem;
   }
 
   &:hover {
